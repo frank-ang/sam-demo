@@ -5,9 +5,13 @@ phases:
         python: 3.8
   build:
     commands:
+      - echo "starting build..."
       - cd sam-hello
+      - pwd
+      - echo "SAM_BUCKET = $SAM_BUCKET"
       - sam package --template-file template.yaml --output-template-file packaged-template.yaml --s3-bucket $SAM_BUCKET
       - cp packaged-template.yaml ../packaged-template.yaml
+      - echo "completed build..."
 artifacts:
   files:
     - packaged-template.yaml
