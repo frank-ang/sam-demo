@@ -5,7 +5,9 @@ phases:
         python: 3.8
   build:
     commands:
+      - cd sam-hello
       - sam package --template-file template.yml --output-template-file packaged-template.yml
+      - cp packaged-template.yml ../packaged-template.yml
 artifacts:
   files:
     - packaged-template.yml
