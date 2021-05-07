@@ -6,8 +6,8 @@ phases:
   build:
     commands:
       - cd sam-hello
-      - sam package --template-file template.yml --output-template-file packaged-template.yml
-      - cp packaged-template.yml ../packaged-template.yml
+      - sam package --template-file template.yaml --s3-bucket  --output-template-file packaged-template.yaml --s3-bucket $SAM_BUCKET
+      - cp packaged-template.yaml ../packaged-template.yaml
 artifacts:
   files:
-    - packaged-template.yml
+    - packaged-template.yaml
