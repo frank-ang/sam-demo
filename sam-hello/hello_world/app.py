@@ -31,7 +31,7 @@ def lambda_handler(event, context):
     #     # Send some context about this error to Lambda Logs
     #     print(e)
 
-    #     raise e
+    #     raise e #
 
     return {
         "statusCode": 200,
